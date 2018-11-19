@@ -9,7 +9,7 @@ mixins = require('postcss-mixins');
 gulp.task('styles', () => 
 	gulp.src("./app/assets/styles/styles.css")
 	.pipe(postcss([cssImport,mixins,cssvars,nested,autoprefixer]))
-	.on('error',(errorInfo) => {
+	.on('error', function (errorInfo) {
 		console.log(errorInfo);
 		this.emit('end');
 	})
